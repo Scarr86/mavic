@@ -1,0 +1,655 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+@import "global";
+
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 30px;
+    //padding: 30px 0 30px;
+    z-index: 10;
+    // &.bg-header{
+    // 	background: #1c1c1c;
+    // }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 30px;
+        text-transform: uppercase;
+        font-size: 15px;
+        line-height: 17px;
+        @extend %ubuntu-medium;
+    }
+
+
+    &__btn {
+        color: #fff;
+        background-color: transparent;
+        padding: 6px 28px;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        margin-right: 8px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+            background-color: #fff;
+            color: #1C1C1C;
+        }
+    }
+
+    &__phone {
+        font-size: 16px;
+        line-height: 18px;
+        @extend %ubuntu-bold;
+    }
+}
+
+
+
+.menu {
+
+    &__list {}
+
+    &__list-item {
+        display: inline-block;
+
+        &+& {
+            padding-left: 20px;
+        }
+    }
+
+    &__list-link {}
+}
+
+// TOP start
+.top {
+    background-image: url(../images/top-bg.jpg);
+
+    .page-section__wrapper {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(45.97% 54.43% at 50% 45.57%, rgba(23, 26, 28, 0) 50.28%, rgba(23, 26, 28, 0.00225974) 50.29%, rgba(4, 5, 5, 0.820343) 58.72%, rgba(5, 5, 6, 0.792703) 80.08%, #000000 87.89%);
+        opacity: 0.4;
+    }
+
+    &__inner {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 96px;
+        line-height: 115px;
+        @extend %sf-semibold;
+        margin-bottom: 25px;
+    }
+
+    &__text {
+        margin: 25px 0 35px;
+        max-width: 325px;
+    }
+
+    &__social-list {}
+
+    &__social-item {
+        display: inline-block;
+        margin: 0 25px;
+    }
+
+    &__social-link {
+        opacity: .5;
+        transition: all .3s;
+
+        &:hover {
+            opacity: 1;
+        }
+
+    }
+}
+
+.container {}
+
+.scroll {
+
+    &__btn {}
+}
+
+//TOP end
+
+// PRODUCTS start
+
+.products {
+
+    &__title {}
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 50px;
+
+    }
+
+    &__text {
+        max-width: 440px;
+
+        p {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__slider-box {
+        position: relative;
+        padding-top: 110px;
+
+    }
+
+    &__slider-text {
+        width: 285px;
+        position: absolute;
+        text-align: right;
+        font-size: 24px;
+        line-height: 28px;
+        @extend %ubuntu-medium;
+        bottom: 30px;
+        left: -250px;
+        z-index: 5;
+    }
+
+    &__slider {
+        max-width: 560px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            border: 4px solid #fff;
+            top: -15px;
+            right: -17px;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__slider-item {}
+
+    &__slider-img {}
+}
+
+.slider-btn {
+    padding: 16px 26px;
+    border: none;
+    outline: none;
+    background: #fff;
+    transition: all .3s;
+    cursor: pointer;
+    position: absolute;
+    bottom: -45px;
+    right: 0;
+    z-index: 5;
+
+
+    svg {
+        stroke: #1c1c1c;
+    }
+
+    &.slick-disabled {
+        background: #1C1C1C;
+
+        svg {
+            stroke: #fff;
+        }
+    }
+
+    &__left {
+        right: 60px;
+    }
+
+}
+
+// PRODUCTS end
+//DENEFITS start
+
+.benefits {
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding-left: 25px;
+    }
+
+    &__item {
+        margin-bottom: 100px;
+        display: flex;
+        align-items: flex-end;
+
+        &:nth-child(even) {
+            margin-top: 25px;
+            margin-left: 50px;
+        }
+
+        &:nth-child(4) {
+			margin-left: 60px;
+			margin-bottom: 20px;
+        }
+
+        &:first-child,
+        &:nth-child(3) {
+			position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+        }
+
+        &:first-child {
+            &::before {
+                height: 50px;
+                width: 245px;
+                background-image: url('../images/line-1.svg');
+                right: -56px;
+                top: 38px;
+            }
+        }
+
+        &:nth-child(3) {
+			margin-left: 30px;
+			margin-bottom: 20px;
+
+            &::before {
+                background-image: url('../images/line-2.svg');
+                width: 465px;
+                height: 63px;
+                top: -85px;
+                right: -43px;
+            }
+
+            &::after {
+                background-image: url('../images/line-3.svg');
+                width: 254px;
+                height: 43px;
+                top: 25px;
+                right: -75px;
+            }
+        }
+    }
+
+    &__num {
+        font-size: 36px;
+        line-height: 41px;
+        @extend %ubuntu-bold;
+        margin-right: 10px;
+    }
+
+    &__img {
+        position: relative;
+        margin-right: 32px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #fff;
+            top: -12px;
+            right: -12px;
+            z-index: -1;
+        }
+
+    }
+
+    &__info {
+        width: 300px;
+    }
+
+    &__info-title {
+        width: 123px;
+        font-size: 21px;
+        line-height: 24px;
+        @extend %ubuntu-bold;
+        margin-bottom: 10px;
+    }
+
+    &__info-text {
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+
+// BENEFITS end
+
+//specification  start
+
+.specification {
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 55px;
+    }
+
+    &__item {
+        &--center {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+    }
+
+    &__box {
+        width: 280px;
+        position: relative;
+
+        margin-top: 10px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: contain;
+        }
+    }
+
+    &__box-2 {
+        margin-top: 140px;
+    }
+
+    &__box-4 {
+        margin-top: 160px;
+    }
+
+    &__box-1::before {
+        background-image: url('../images/point-1.svg');
+        width: 229px;
+        height: 115px;
+        right: -186px;
+        top: 14px;
+    }
+
+    &__box-2::before {
+        background-image: url('../images/point-2.svg');
+        width: 346px;
+        height: 81px;
+        right: -305px;
+        top: -66px;
+    }
+
+    &__box-3::before {
+        background-image: url('../images/point-3.svg');
+        width: 258px;
+        height: 103px;
+        left: -275px;
+        top: 16px;
+    }
+
+    &__box-4::before {
+        background-image: url('../images/point-4.svg');
+        width: 124px;
+        height: 89px;
+        left: -150px;
+        top: -70px;
+    }
+
+    &__box-title {
+        font-size: 21px;
+        line-height: 28px;
+        @extend %ubuntu-bold;
+        margin-bottom: 10px;
+    }
+
+    &__box-text {
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+
+// specification  end
+
+//QUESTIONS start
+
+.questions {
+
+    &__items {
+        max-width: 757px;
+        position: relative;
+        margin-bottom: 15px;
+
+    }
+
+    &__item {
+        background: rgba(0, 0, 0, 0.3);
+        max-width: 690px;
+        margin-bottom: 5px;
+        position: relative;
+
+        &:nth-child(3)::before {
+            content: '';
+            position: absolute;
+            width: 319px;
+            height: 125px;
+            top: -33px;
+            right: -386px;
+            background-image: url('../images/question-bg.png');
+
+        }
+
+    }
+
+
+
+    &__item-title {
+        font-size: 21px;
+        line-height: 28px;
+        padding: 20px 10px 25px 40px;
+        @extend %ubuntu-medium;
+        color: rgba(#fff, .8);
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            content: url('../images/arrow-big.svg');
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 72px;
+            height: 67px;
+            background-color: #fff;
+            right: -72px;
+            top: 0;
+        }
+    }
+
+    &__item-text {
+        padding: 0 5px 75px 50px;
+        font-size: 15px;
+        line-height: 22px;
+        display: none;
+        //height: 0;
+        // padding: 0 5px 0px 50px;
+        //visibility: hidden;
+        //transition: all 0.3s;
+    }
+
+    &__item.questions__item--active {
+        .questions__item-title::after {
+            transform: rotate(-180deg);
+        }
+
+        .questions__item-text {
+            display: block;
+            //height: 100%;
+            //display: block;
+            //padding: 0 5px 75px 50px;
+            //visibility: visible;
+        }
+    }
+}
+//QUESTIONS end
+
+//CONTACTS start
+.contacts {
+
+    &__inner {
+        display: flex;
+        margin-left: 50px;
+    }
+
+    &__info {
+        width: 240px;
+        margin-right: 60px;
+    }
+
+    &__info-box {
+        margin-bottom: 30px;
+    }
+
+    &__info-title {
+        font-size: 21px;
+        line-height: 24px;
+        @extend %ubuntu-bold;
+        margin-bottom: 13px;
+    }
+
+    &__info-phone,
+    &__info-email {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    &__info-email:hover {
+        text-decoration: underline;
+    }
+
+    &__form {
+        width: 570px;
+        margin-right: 106px;
+    }
+
+    &__form-title {
+        font-size: 21px;
+        line-height: 24px;
+        @extend %ubuntu-bold;
+        margin-bottom: 13px;
+    }
+
+    &__form-text {
+        font-size: 15px;
+        line-height: 18px;
+        margin-bottom: 12px;
+    }
+
+    &__form-line {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    &__form-textarea,
+    &__form-input {
+        @extend %ubuntu-regular;
+        border: none;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 15px;
+        color: #fff;
+
+        &::placeholder {
+            color: rgba(#fff, .4);
+        }
+    }
+
+    &__form-input {
+        width: 49%;
+        margin-bottom: 10px;
+    }
+
+    &__form-textarea {
+        min-height: 144px;
+        width: 100%;
+        resize: none;
+        margin-bottom: 20px;
+    }
+
+
+    &__form-btn {
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.03em;
+        @extend %ubuntu-bold;
+        border: 1px solid #FFFFFF;
+        border-radius: 2px;
+        padding: 9px 15px;
+        color: #fff;
+        background-color: transparent;
+		cursor: pointer;
+		transition: all .3s;
+
+        &:hover {
+            color: #1c1c1c;
+            background-color: #fff;
+        }
+    }
+
+    &__social {}
+
+    &__social-list {
+       height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    &__social-item {
+        margin: 14px 0;
+    }
+
+    &__social-link {
+		line-height: 0;
+		opacity: .5;
+		&:hover{
+			opacity: 1;
+		}
+    }
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 32px;
+
+    &__copy {
+        text-align: right;
+        font-size: 13px;
+		line-height: 15px;
+		color: rgba(#fff, .64);
+    }
+}
+//CONTACTS end
+
+
+@import "media";
